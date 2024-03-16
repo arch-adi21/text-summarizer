@@ -1,7 +1,7 @@
-artifacts : artifacts
+artifacts_root : artifacts
 
 data_ingestion :
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/arch-adi21/NLP-Learning/blob/main/samsumdata.zip
+  source_url: https://github.com/arch-adi21/NLP-Learning/raw/main/summarizer-data.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion

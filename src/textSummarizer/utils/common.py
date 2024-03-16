@@ -1,6 +1,6 @@
 import os
 from textSummarizer.logging import logger
-from box.exceptions import BoxException
+from box.exceptions import BoxValueError
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
@@ -8,7 +8,7 @@ from typing import Any
 import yaml
 
 @ensure_annotations
-def read_yaml(path_to_yaml : path) -> ConfigBox:
+def read_yaml(path_to_yaml : Path) -> ConfigBox:
     """
     Read a yaml file and return a ConfigBox object.
 
@@ -22,13 +22,17 @@ def read_yaml(path_to_yaml : path) -> ConfigBox:
     ConfigBox
         A ConfigBox object.
     """
-    with open(path_to_yaml, 'r') as f:
-        try:
-            return ConfigBox(yaml.safe_load(f))
-            logger.info(f"Read yaml file {path_to_yaml}")
-        except yaml.YAMLError as e:
-            logger.error(f"Error reading yaml file {path_to_yaml}: {e}")
-            raise BoxException(f"Error reading yaml file {path_to_yaml}: {e}")
+    try:
+        with open(path_to_yaml, 'r') as yaml_file:
+            content = yaml.safe_load(yaml_file)
+            logger.info(f"yaml file : {path_to_yaml} loaded successfully")
+            return ConfigBox(content)
+    except BoxValueError:
+        logger.error(f"could not load yaml file: {path_to_yaml}")
+        raise ValueError("could not load yaml file: {path_to_yaml}")
+    except Exception as e:
+        logger.error(f"some unnowkn error: {e}")
+        return e
 
 
 @ensure_annotations
@@ -52,7 +56,7 @@ def create_directories(path_to_dir : list , verbose = True) :
         if verbose :
             logger.info(f"Created directory {path}")
 
-def get_size(path:path) -> str:
+def get_size(path:Path) -> str:
     """
     Get the size of a file.
 
