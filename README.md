@@ -136,4 +136,4 @@ Email: asj.reac@gmail.com
 
 
 ## Contibutors :-
--[<img src="https://github.com/ReDxDaGer.png" width="60px;"/><br /><sub><a href="https://github.com/ReDxDaGer">ReDxDaGer</a></sub>](https://github.com/ReDxDaGer/text-summarizer)
+- [<img src="https://github.com/ReDxDaGer.png" width="60px;"/><br /><sub><a href="https://github.com/ReDxDaGer">ReDxDaGer</a></sub>](https://github.com/ReDxDaGer/text-summarizer)
