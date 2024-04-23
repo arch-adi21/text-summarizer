@@ -133,3 +133,8 @@ Email: asj.reac@gmail.com
     AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = simple-app
+
+
+## Contibutors :-
+
+- [<img src="https://github.com/{{ ReDxDaGer }}.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ ReDxDaGer }}">{{ ReDxDaGer }}</a></sub>](https://github.com/{{ ReDxDaGer }}/{{ text-summarizer }}
