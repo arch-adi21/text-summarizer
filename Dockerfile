@@ -4,10 +4,9 @@ WORKDIR /app
 
 RUN apk update
 
-COPY requirements.txt /app/
+COPY . /app/
 RUN pip install -r requirements.txt
 
-COPY . /app/
 
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
