@@ -2,11 +2,10 @@ FROM python:3.11-alpine
 
 WORKDIR /app
 
-RUN apk update
+COPY . /app
 
-COPY . /app/
-RUN pip install --no-cache-dir -r requirements.txt
-
+RUN apk update && \
+    apk add --no-cache gcc python3-dev musl-dev linux-headers
 
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
