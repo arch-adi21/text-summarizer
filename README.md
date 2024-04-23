@@ -11,6 +11,10 @@
 7. update the main.py
 8. update the app.py
 
+## Sample Image after hosting on Amazon web services :
+![image](https://github.com/arch-adi21/text-summarizer/assets/155255348/b33902d0-ef5c-4f97-9519-37abe73a79af)
+
+
 
 # How to run?
 ### STEPS:
